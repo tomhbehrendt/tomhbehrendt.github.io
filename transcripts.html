@@ -1,0 +1,161 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Thomas Behrendt | Post</title>
+		<link rel="shortcut icon" type="image/png" href="images/favicon.png"/>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta property="og:title" content="Data Driven Netflix Binging">
+		<meta property="og:description" content="Using APIs to find the worst rated TV episodes">
+		<meta property="og:image" content="images/Capture.PNG">
+		<meta property="og:author" content="Thomas Behrendt">
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						
+						<h1><a href="index.html">THOMAS BEHRENDT</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="#">contact</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<!-- <li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li> -->
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Lorem ipsum</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Dolor sit amet</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Feugiat veroeros</h3>
+											<p>Phasellus sed ultricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Etiam sed consequat</h3>
+											<p>Porta lectus amet ultricies</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li><a href="#" class="button large fit">Log In</a></li>
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<header>
+									<div class="title">
+										<h2><a href="#">Character breakdowns of famous franchsises</a></h2>
+										<p>Who said what now? Breaking down movie franchises line by line</p>
+									</div>
+									<div class="meta">
+										<time class="published" datetime="2020-05-13">April 29, 2021</time>
+										<!-- <a href="#" class="author"><span class="name">Jane Doe</span><img src="images/avatar.jpg" alt="" /></a> -->
+									</div>
+								</header>
+								<p>Do you ever watch a Marvel film and think, I can’t help but feel like the guy with the reactor in his chest talks a lot? Tony Stark to be particular really does talk, a lot. I’ve always wanted to quantify it, and in the process also found some interesting trends across other franchises such as the Star Wars films. Without further ado, here is the model itself:</p>
+								<div style="display:flex; justify-content: center;">
+									<iframe width="680" height="510" src="https://app.powerbi.com/view?r=eyJrIjoiNzY1ZjY1YzctNzBjNC00YjQ0LTlkNjctMTUwZTVhNzFkZWIwIiwidCI6ImJmZjQ3ZDUzLTI1ODktNDRlOS1hNmEzLTk5NWZhYjE1NjM3MCJ9&pageName=ReportSectiond719fd5ad30534135b44" frameborder="0" allowFullScreen="true"></iframe>
+								  </div>
+								<p></p>
+								<h3 style="text-align:left;">Explanation</h3>
+								<p>The information for this dashboard used different sources, including the fandom wiki page for each franchise. The content is publicly created and contains ludicrous amounts of information. As an example, the Marvel Fandom at the time of writing this had 255,928 articles, spanning information across 69,050 characters and 52,871 comics. I only considered the characters portrayed in the films, which once sorted came out to be 635 unique characters. If the 69,000 number sounds a bit intense, the fandom contains all the characters in the multiverse, containing every timeline that every character has existed. The film franchise exists in the Earth-199999 universe, whereas the main timeline for the comics is Earth-616. </p>
+								</p>I ended up downloading the whole Fandom database for Marvel (1.5Gb of text) and parsed through it for Earth-199999, pulling out the genders for 635 characters. It does contain a whole lot more content that can be visualized such as <a href="https://pudding.cool/2017/07/comics/"> this article on super-power distribution </a>. For the transcripts I used Fandom and idsb, which being fan created had some inconsistent script formats. As a result I implemented rules to ensure that the code didn’t count non-spoken information toward a character’s line tally, which included scene descriptions as well as translated text (for characters speaking a language other than English). Some examples being:</p>
+								<blockquote> <b>SCOTT LANG:</b> [Response to Hulk touching the suit and something red in a glass tube] Hey, hey, hey! Easy, easy!</blockquote>
+								<blockquote> <b>AKIHIKO:</b> てめえ なぜこんなことをする? 俺たちてめえになにもしてねぇだろ！(Romanized: Temē naze konna koto wo suru? Oretachi temē ni nani mo shitenē daro!) (English: Why are you doing this? We never did anything to you!)</blockquote>
+								<p>It goes without saying that as a result of this process, the database will not be 100% accurate. Doing so would require me to individually fact check over twenty-five thousand spoken lines across all the franchises that I’ve covered.</p>
+								<h3 style="text-align:left;">Dashboard</h3>
+								<div style="display:flex; justify-content: center;">
+									<img src="images/transcript_marvel.png" style="max-width: 100%;" class="center"/>
+								  </div>
+								</p>I wanted to have a simple landing page for the summary information, and this was the result. All the performance data is taken from IMDb and the comparison of lines between genders is created from my script database. I can quickly flip between films and franchises and compare their relative information.</p>
+								  <div style="display: flex; justify-content: center;">
+									<img src="images/scripts_marvel.png" style="max-width:100%;" />
+								  </div>
+								</p>The second page is a deeper dive into the scripts themselves, allowing you to see individual line breakdowns. Alongside this I have a separate split of the database that counts the number of times a word is said and plots it on a “word splash”. As you would imagine there are a lot of basic words said, so I have removed the <a href=" https://www.ef-australia.com.au/english-resources/english-vocabulary/top-3000-words/"> most common 3000 </a>  and allowed only words of length greater than four. The timeline shows a plot of lines over the course of the film, with the vertical axis representing the number of words in each line. </p>
+								<h3 style="text-align:left;">Analysis</h3>
+								<P>Did I say Tony Stark talks a lot? Far out, so much so that he has more lines in Captain America: Civil War then Captain America himself. When it comes to his own Iron Man trilogy, he consumes 38.2% of the lines while enjoying a healthy lead in the Avengers series, taking home a 15.7% share (Steve Rogers closest with 9.6%). While Tony and Steve carry the “heavy” Marvel speeches of camaraderie and love, the longest speech in the franchise actually goes to Justin Hammer’s weapons pitch in Iron Man 2: </p> 
+								<blockquote>“Well, you’re talking to the right guy. Claridge Hi-Tec, semi-automatic, 9mm pistol. Too downtown? I agree. M24 shotgun, pump action. Five-round magazine. You know what? You’re not a hunter. What am I talking about? I’m getting rid of it. This is the FN F2000 from Belgium. They do make something better than waffles. It’s beautiful, But I can tell this isn’t disco enough for you, so I’m gonna put it right here. You’re looking at a Milkor 40mm grenade launcher. Tear gas, smoke. Hippie control. You’re tough. Let me tell you something. Size does matter. Don’t let anyone tell you different. This is an M134 7.62 Minigun. Six invidual barrels. The torso taker, powder maker. Our boys in uniform call in Uncle Gazpacho or Puff the Magic Dragon. Okay. These are the Cubans, baby. This is the Cohibas, the Montecristos. This is a kinetic-kill, side-winder vehicle with a secondary cyclotrimethlyenetrinitamine DX burst. It’s capable of busting the bunker under the bunker you just busted. If it were any smarter, it would write a book. A book that would make Ulysses look like it was written in crayon. It would read it to you. This is my Eiffel Tower. This is my Rachmaninoff’s Third. My Pieta. It’s completely elegant. It’s bafflingly beautiful. And it’s capable of reducing the population of any standing structure to zero. I call it the Ex-Wife. That’s the best I got. Are we gonna do this? Give me something here. You’re like a Sphinx. I can’t read you.</blockquote>
+								<p>Similarly, Star Wars’ Galen Erso, the architect behind that convenient death star exhaust vent owns the longest speech for his explanation of its design in the 2016 film Rogue One. A small and powerful flaw that somehow accounted for space pilots shooting lasers at 90˚ angles. <p>
+								<p>Looking at genders, male roles dominate all the franchises, leaving female roles severely unrepresented, so much so that the Lord of The Rings franchise has less than 8% of lines spoken by women (22.5% and 20% for Marvel and Star Wars). It’s a shame when you consider Captain Marvel, a female led film, outperformed (on total gross after inflation) the original films for Ant-Man, Captain America, Iron-Man and Thor. </p>
+								<p>So, what relates to what? I thought it could be fun to calculate a correlation table and determine if there are any relationships between films. The categories I considered are below, with a stronger relationship the closer the coefficient is to -+ 1. For a negative value it implies that as one value is increased the other will decrease. <p>
+								<div style="display:flex; justify-content: center;">
+									<img src="images/correlation.PNG" style="max-width: 100%;" class="center"/>
+								  </div>
+								</p></p>
+								<p style="text-align: center"> <i>From left to right: Marvel, Star Wars and Lord of the Rings.</i> </p>
+								</p>In reality we are talking about less than twenty discrete points of data, so it is difficult to stand behind these values. Alas, there is a strong connection between budget and gross, which is consistent particularly with Marvel as their Avengers series attracts the most cash whilst costing a fortune for the long list of stars. In regard to IMDb ratings, there is an interesting trend with Star Wars. Contrary to the other franchises, Star Wars films show that the longer films actually receive a poorer reception compared to the shorter films.</p>
+								<h3 style="text-align:left;">Summary</h3>
+								<p>There’s a lot of data to play with, and the lens can be focused on many other aspects such as the financial success of individual films from the 20th century, the elevated production rate of recent years or even an analysis on the language complexity between different franchises. This project could be achieved in a variety of ways, with Python being a great solution due to its line-by-line nature. As always, happy coding.</p>
+								<footer>
+									<ul class="stats">
+
+									</ul>
+								</footer>
+							</article>
+
+					</div>
+
+				<!-- Footer -->
+					<section id="footer">
+						<ul class="icons">
+							<li><a href="#" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+							<li><a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#116;&#111;&#109;&#104;&#98;&#101;&#104;&#114;&#101;&#110;&#100;&#116;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+						</ul>
+						<p class="copyright">&copy; Thomas Behrendt:</p>
+					</section>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
